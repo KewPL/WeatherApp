@@ -23,4 +23,17 @@ public class HourlyForecast {
     public String getIcon() {
         return icon;
     }
+
+    public int getWeatherCode() {
+        if (icon != null && icon.length() >= 7) {
+            try {
+                return Integer.parseInt(icon.substring(icon.length() - 7, icon.length() - 4));
+            } catch (NumberFormatException e) {
+                // Log the exception or handle it
+            }
+        }
+        return -1; // Return -1 if the weather code cannot be extracted
+    }
 }
+
+

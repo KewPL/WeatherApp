@@ -29,8 +29,19 @@ public class HourlyForecastAdapter extends RecyclerView.Adapter<HourlyForecastAd
     @Override
     public void onBindViewHolder(@NonNull HourlyForecastViewHolder holder, int position) {
         HourlyForecast hourlyForecast = hourlyForecasts.get(position);
-        holder.bind(hourlyForecast);
+        holder.timeTextView.setText(hourlyForecast.getTime());
+        holder.temperatureTextView.setText(String.valueOf(hourlyForecast.getTemperature()) + "°");
+
+        // Load the local weather icon image
+        int weatherCode = hourlyForecast.getWeatherCode();
+        int imageResourceId = holder.itemView.getContext().getResources().getIdentifier("icon_" + weatherCode, "drawable", holder.itemView.getContext().getPackageName());
+        if (imageResourceId != 0) {
+            holder.weatherIconImageView.setImageResource(imageResourceId);
+        } else {
+            // Load the default image or handle the situation when the image is not found in the local resources
+        }
     }
+
 
     @Override
     public int getItemCount() {
@@ -62,13 +73,36 @@ public class HourlyForecastAdapter extends RecyclerView.Adapter<HourlyForecastAd
             String imageUrl = "https:" + hourlyForecast.getIcon();
             String cacheBustingImageUrl = imageUrl + "?timestamp=" + System.currentTimeMillis(); // Add cache-busting query parameter
 
-            Glide.with(itemView.getContext())
-                    .load(cacheBustingImageUrl) // Update this line
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .skipMemoryCache(true)
-                    .error(R.drawable.weather_icon_error)
-                    .into(weatherIconImageView);
+            // Get the weather code from the hourlyForecast
+            int weatherCode = hourlyForecast.getWeatherCode();
+
+            // Get the corresponding image resource ID
+            int iconResource = getWeatherIconResource(weatherCode);
+
+            // Set the image using the resource ID
+            weatherIconImageView.setImageResource(iconResource);
         }
+
+        private int getWeatherIconResource(int weatherCode) {
+            switch (weatherCode) {
+                case 1003: // Clear/Sunny
+                    return R.drawable.icon_0d;
+                case 293: // Clear/Sunny
+                    return R.drawable.icon_0d;
+                case 176: // Partly Cloudy
+                    return R.drawable.icon_0n;
+                case 299: // Partly Cloudy
+                    return R.drawable.icon_0n;
+                case 353: // Partly Cloudy
+                    return R.drawable.icon_0n;
+                // Add more cases for other weather condition codes
+                default:
+                    return R.drawable.icon_1n;
+            }
+        }
+
+
+
     }
 
 }

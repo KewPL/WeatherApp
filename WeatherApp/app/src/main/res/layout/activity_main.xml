@@ -25,11 +25,10 @@
         android:id="@+id/locationEditText"
         android:layout_width="147dp"
         android:layout_height="38dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="132dp"
         android:hint="Enter location"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+        tools:layout_editor_absoluteY="645dp" />
 
     <Button
         android:id="@+id/searchButton"
@@ -37,23 +36,9 @@
         android:layout_height="41dp"
         android:text="GO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toEndOf="@+id/locationEditText"
-        tools:layout_editor_absoluteY="112dp" />
-
-    <TextView
-        android:id="@+id/currentTemperatureTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="25°C"
-        android:textColor="#140E6E"
-        android:textSize="48sp"
-        app:fontFamily="@font/bebas_neue"
-        app:layout_constraintBottom_toTopOf="@+id/locationEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+        tools:layout_editor_absoluteY="645dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/hourlyForecastRecyclerView"
@@ -68,37 +53,52 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="165dp">
+        tools:layout_editor_absoluteY="28dp">
 
         <RelativeLayout
             android:id="@+id/icon_container"
-            android:layout_width="253dp"
-            android:layout_height="445dp"
+            android:layout_width="wrap_content"
+            android:layout_height="373dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="82dp"
-            android:layout_marginEnd="76dp">
+            android:layout_marginStart="-1dp"
+            android:layout_marginEnd="1dp">
 
 
             <ImageView
                 android:id="@+id/boxImage"
-                android:layout_width="251dp"
-                android:layout_height="177dp"
+                android:layout_width="409dp"
+                android:layout_height="244dp"
                 android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
                 android:layout_marginBottom="-1dp"
                 android:src="@drawable/card"
                 app:srcCompat="@drawable/card" />
 
+
             <ImageView
                 android:id="@+id/currentWeatherIconImageView"
-                android:layout_width="113dp"
-                android:layout_height="114dp"
+                android:layout_width="220dp"
+                android:layout_height="216dp"
                 android:layout_above="@+id/boxImage"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="-73dp" />
+                android:layout_marginBottom="-120dp" />
+
+            <TextView
+                android:id="@+id/currentTemperatureTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/currentWeatherIconImageView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:text="25°C"
+                android:textColor="#FFFFFF"
+                android:textSize="140sp"
+                app:fontFamily="@font/bebas_neue" />
 
         </RelativeLayout>
 
@@ -108,7 +108,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/icon_container"
             android:layout_centerHorizontal="true"
-            android:text="00:00" />
+            android:text="00:00"
+            android:textColor="#394D13E4"
+            android:textSize="30sp"
+            app:fontFamily="@font/bebas_neue" />
 
     </RelativeLayout>
 
