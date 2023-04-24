@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/gradient_background2"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
         android:text="Welcome, User"
-        android:textSize="18sp"
+        android:textColor="#4d13e4"
+        android:textSize="25sp"
         app:fontFamily="@font/bebas_neue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/locationEditText"
@@ -88,8 +89,8 @@
                 android:layout_height="177dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="-1dp"
-                android:src="@drawable/uicard5"
-                app:srcCompat="@drawable/uicard5" />
+                android:src="@drawable/card"
+                app:srcCompat="@drawable/card" />
 
             <ImageView
                 android:id="@+id/currentWeatherIconImageView"
@@ -110,6 +111,16 @@
             android:text="00:00" />
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="77dp"
+        android:layout_height="79dp"
+        app:layout_constraintEnd_toStartOf="@+id/userNameTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/happy_sun_emoji_with_umbrella_in_a_hand_3d_vector_46763165_transformed" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

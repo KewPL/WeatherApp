@@ -5,19 +5,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".WelcomeActivity">
+
 
   <EditText
       android:id="@+id/userNameEditText"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:hint="Enter your name" />
+      android:layout_width="221dp"
+      android:layout_height="47dp"
+      android:layout_marginTop="544dp"
+      android:background="@drawable/rounded_button_background2"
+      android:gravity="center"
+      android:hint="Enter your name"
+      android:textColor="#F7F4FF"
+      android:textColorHint="#65FFFFFF"
+      android:textSize="20sp"
+      app:fontFamily="@font/bebas_neue"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
   <Button
       android:id="@+id/submitNameButton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Submit"
-      android:onClick="submitName" />
+      android:layout_width="298dp"
+      android:layout_height="48dp"
+      android:background="@drawable/rounded_button_background"
+      android:onClick="submitName"
+      android:text="Let's start"
+      android:textColor="#4d13e4"
+      android:textSize="25sp"
+      app:backgroundTint="#FFD65D"
+      app:fontFamily="@font/bebas_neue"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.495"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userNameEditText"
+      app:layout_constraintVertical_bias="0.233" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <ImageView
+      android:id="@+id/imageView"
+      android:layout_width="292dp"
+      android:layout_height="109dp"
+      android:layout_marginBottom="56dp"
+      app:layout_constraintBottom_toTopOf="@+id/userNameEditText"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.495"
+      app:layout_constraintStart_toStartOf="parent"
+      app:srcCompat="@drawable/weatherwise_logo" />
+
+  <ImageView
+      android:id="@+id/imageView2"
+      android:layout_width="226dp"
+      android:layout_height="184dp"
+      app:layout_constraintBottom_toTopOf="@+id/imageView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/welcome_image" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
